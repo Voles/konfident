@@ -1,0 +1,19 @@
+{
+  "name": "Konfident",
+  "description": "Confident - feeling or showing confidence in oneself or one's abilities or qualities; \"having full trust\"",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Voles/konfident.git"
+  },
+  "dependencies": {
+    "angular": "1.2.16",
+    "bootstrap": "3.0.2",
+    "modernizr": "2.7.0",
+    "jquery": "2.0.3",
+    "angular-route": "1.2.16",
+    "jasmine-jquery": "~1.0.0",
+    "angular-mocks": "1.2.16",
+    "angular-sanitize": "1.2.16"
+  }
+}

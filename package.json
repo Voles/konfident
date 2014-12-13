@@ -1,0 +1,34 @@
+{
+  "name": "Konfident",
+  "description": "Confident - feeling or showing confidence in oneself or one's abilities or qualities; \"having full trust\"",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Voles/konfident.git"
+  },
+  "author": "Niels Dequeker",
+  "dependencies": {
+    "bower": "~1.2.7",
+    "load-grunt-tasks": "~0.2.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-open": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "connect-livereload": "~0.3.0",
+    "karma-script-launcher": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.2",
+    "karma-ng-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "~0.1.5",
+    "grunt-karma": "~0.6.2",
+    "grunt": "~0.4.2",
+    "grunt-html2js": "~0.2.4",
+    "karma-phantomjs-launcher": "~0.1.2",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-coffee-preprocessor": "~0.1.3",
+    "requirejs": "~2.1.11",
+    "karma-requirejs": "~0.2.1",
+    "karma": "~0.10.9",
+    "protractor": "^0.21.0",
+    "grunt-protractor-runner": "^0.2.4"
+  }
+}
