@@ -1,7 +1,5 @@
-Konfident
-=========
-
-[![Build Status](https://travis-ci.org/Voles/konfident.svg?branch=master)](https://travis-ci.org/Voles/konfident)
+Konfident [![Build Status](https://travis-ci.org/Voles/konfident.svg?branch=master)](https://travis-ci.org/Voles/konfident)
+===========================================================================================================================
 
 > Confident - feeling or showing confidence in oneself or one's abilities or qualities; "having full trust"
 
