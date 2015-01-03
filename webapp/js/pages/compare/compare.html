@@ -36,14 +36,14 @@
       </div>
 
       <div ng-show="!tab.visible">
-        <img ng-src="{{analysis.imageDataUrl}}" class="diffed-image">
+        <img ng-src="{{::analysis.imageDataUrl}}" class="diffed-image">
       </div>
 
       <div ng-show="tab.visible">
         <div id="comparison" ng-style="{
             'background-image': 'url(' + analysis.firstPicturePath + ')'
           }">
-          <img ng-src="{{analysis.secondPicturePath}}" class="comparison-placeholder">
+          <img ng-src="{{::analysis.secondPicturePath}}" class="comparison-placeholder">
           <figure>
             <div id="divisor" ng-style="{
               'width': slider.value + '%',
