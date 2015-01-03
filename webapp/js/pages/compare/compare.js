@@ -2,7 +2,8 @@
   'use strict';
 
   angular.module('kf')
-    .controller('CompareController', function ($scope, $route, $location, $q, $document, $http, CompareImages, apiPrefix) {
+    .controller('CompareController',
+    function ($scope, $route, $location, $q, $document, $http, CompareImages, apiPrefix) {
       $scope.analysis = {};
       var originPath = 'p3';
 

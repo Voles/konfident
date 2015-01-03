@@ -14,8 +14,16 @@
 
       $httpBackend.whenGET('http://localhost:8008/directories?rootDir=p3')
         .respond([
-          {"name": "v1", "src": "uploaded/p3/v1", "pictures": ["overview.png", "menu.png"]},
-          {"name": "v2", "src": "uploaded/p3/v2", "pictures": ["overview.png", "menu.png"]}
+          {
+            'name': 'v1',
+            'src': 'uploaded/p3/v1',
+            'pictures': ['overview.png', 'menu.png']
+          },
+          {
+            'name': 'v2',
+            'src': 'uploaded/p3/v2',
+            'pictures': ['overview.png', 'menu.png']
+          }
         ]);
     }));
 

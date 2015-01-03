@@ -72,7 +72,7 @@
               return compareImageData(firstImageSrc, firstImageInfo.data, secondImageInfo.data, width, height);
             });
         }
-      }
+      };
     });
 
 }());

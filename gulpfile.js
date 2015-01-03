@@ -14,7 +14,7 @@
 
   gulp.task('jshint', function () {
     return gulp
-      .src('app/js/**/*.js')
+      .src('webapp/js/**/*.js')
       .pipe(plugins.jshint('.jshintrc'))
       .pipe(plugins.jshint.reporter('jshint-stylish', { verbose: true }));
   });

@@ -35,5 +35,5 @@
           worker.terminate();
         }
       };
-    })
+    });
 }());

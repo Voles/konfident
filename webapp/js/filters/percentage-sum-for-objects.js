@@ -12,6 +12,6 @@
 
         return result / (Object.keys(objects).length);
       };
-    })
+    });
 
 }());

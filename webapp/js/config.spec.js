@@ -7,11 +7,11 @@
 
     beforeEach(module('kf'));
     beforeEach(module('templates'));
-    beforeEach(inject(function (_$rootScope_, _$route_, _$injector_, _$httpBackend_) {
-      $rootScope    = _$rootScope_.$new();
-      $route        = _$route_;
+    beforeEach(inject(function (_$injector_) {
       $injector     = _$injector_;
-      $httpBackend  = _$httpBackend_;
+      $rootScope    = $injector.get('$rootScope').$new();
+      $route        = $injector.get('$route');
+      $httpBackend  = $injector.get('$httpBackend');
     }));
 
     describe('the configuration', function () {
@@ -37,13 +37,17 @@
 
       it('should have its own controller', function () {
         var routeName = '/compare/:masterDirectory?/:selectedDirectory?';
-        expect($route.routes[routeName].controller).toEqual('CompareController');
+        expect($route.routes[routeName].controller)
+          .toEqual('CompareController');
       });
 
       it('should have its own view', function () {
         var routeName = '/compare/:masterDirectory?/:selectedDirectory?';
-        expect($route.routes[routeName].templateUrl).toBeDefined();
-        expect($route.routes[routeName].templateUrl).toEqual('js/pages/compare/compare.html');
+        expect($route.routes[routeName].templateUrl)
+          .toBeDefined();
+
+        expect($route.routes[routeName].templateUrl)
+          .toEqual('js/pages/compare/compare.html');
       });
     });
 

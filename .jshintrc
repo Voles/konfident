@@ -32,7 +32,7 @@
   "latedef": true,
 
   // Enforce line length to 80 characters
-  "maxlen": 80,
+  "maxlen": 120,
 
   // Require capitalized names for constructor functions.
   "newcap": true,
@@ -63,10 +63,13 @@
    */
   "globals": {
     "angular": true,
+    "afterEach": true,
     "describe": true,
     "beforeEach": true,
     "it": true,
     "expect": true,
-    "$": true
+    "$": true,
+    "inject": true,
+    "self": true
   }
 }
