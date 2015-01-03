@@ -1,0 +1,57 @@
+<div class="well">
+  Compare <select ng-model="masterDirectory" ng-options="directory.name for directory in directories"></select>
+  with <select ng-model="selectedDirectory" ng-options="directory.name for directory in directories"></select>
+  <dl class="dl-horizontal">
+    <dt>Total analysis time (ms)</dt>
+    <dd ng-bind="result | sumForObjects:'analysisTime'"></dd>
+
+    <dt>Total difference (%)</dt>
+    <dd ng-bind="result | percentageSumForObjects:'misMatchPercentage' | number:2"></dd>
+  </dl>
+</div>
+
+<div class="list-group">
+  <div class="list-group-item" ng-repeat="(picture, analysis) in result">
+    <span class="badge">{{analysis.misMatchPercentage | number:2}}%</span>
+
+    <div ng-click="tab.showDetails = true;">
+      <h3>{{picture}}</h3>
+      <em>Analysis took {{analysis.analysisTime}}ms</em>
+    </div>
+
+    <div ng-show="tab.showDetails">
+    <hr>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-default" ng-click="tab.visible = true;"
+          ng-class="{
+          'btn-primary': tab.visible
+          }">Diff</button>
+      <button type="button" class="btn btn-default" ng-click="tab.visible = false;"
+              ng-class="{
+          'btn-primary': !tab.visible
+          }">Compare</button>
+    </div>
+
+      <div ng-show="tab.visible">
+        <img ng-src="{{analysis.imageDataUrl}}" style="max-width: 100%">
+      </div>
+
+      <div ng-show="!tab.visible">
+        <div id="comparison" style="background-image: url({{analysis.firstPicturePath}});background-repeat: no-repeat;">
+          <img src="{{analysis.secondPicturePath}}" class="comparison-placeholder">
+          <figure>
+            <div id="divisor" style="width: {{slider.value}}%;background-image: url({{analysis.secondPicturePath}});background-color: #ffffff;background-size: cover;"></div>
+          </figure>
+          <input type="range" min="0" max="100" value="50" id="slider" ng-model="slider.value">
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+</div>

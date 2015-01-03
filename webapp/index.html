@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <title>Konfident</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Konfident">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+
+</head>
+
+<body ng-app="kf">
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Konfident</h1>
+    </div>
+
+    <div ng-view></div>
+  </div>
+
+<!-- Vendors -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/bower_components/jquery/jquery.min.js"><\/script>')</script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/resemblejs/resemble.js"></script>
+
+<!-- The Application -->
+<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/pages/compare/compare.js"></script>
+<script src="js/services/compare-images.js"></script>
+<script src="js/services/worker.js"></script>
+
+</body>
+</html>
