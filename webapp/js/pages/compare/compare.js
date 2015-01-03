@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('kf')
-    .controller('CompareController', function ($scope, $routeParams, $location, $q, $document, $http, CompareImages, apiPrefix) {
+    .controller('CompareController', function ($scope, $route, $location, $q, $document, $http, CompareImages, apiPrefix) {
       $scope.analysis = {};
       var originPath = 'p3';
 
@@ -36,23 +36,29 @@
         .then(function (directories) {
           $scope.directories = directories;
 
-          if (!$routeParams.masterDirectory) {
-            $location.path('/compare/' + directories[0].name + '/' + directories[1].name);
+          if (!directories) {
+            return $q.reject('No directories available');
           }
 
-          if (!$routeParams.selectedDirectory) {
+          if (!$route.current.params.masterDirectory) {
             $location.path('/compare/' + directories[0].name + '/' + directories[1].name);
+            return $q.reject('No master directory defined');
+          }
+
+          if (!$route.current.params.selectedDirectory) {
+            $location.path('/compare/' + directories[0].name + '/' + directories[1].name);
+            return $q.reject('No selected directory defined');
           }
 
           return directories;
         })
         .then(function (directories) {
           angular.forEach(directories, function (directory) {
-            if (directory.name === $routeParams.masterDirectory) {
+            if (directory.name === $route.current.params.masterDirectory) {
               $scope.masterDirectory = directory;
             }
 
-            if (directory.name === $routeParams.selectedDirectory) {
+            if (directory.name === $route.current.params.selectedDirectory) {
               $scope.selectedDirectory = directory;
             }
           });

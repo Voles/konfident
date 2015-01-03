@@ -6,6 +6,7 @@
     var $rootScope, $route, $injector, $httpBackend;
 
     beforeEach(module('kf'));
+    beforeEach(module('templates'));
     beforeEach(inject(function (_$rootScope_, _$route_, _$injector_, _$httpBackend_) {
       $rootScope    = _$rootScope_.$new();
       $route        = _$route_;
