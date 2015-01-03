@@ -23,21 +23,21 @@
     <hr>
 
     <div class="btn-group">
-      <button type="button" class="btn btn-default" ng-click="tab.visible = true;"
-          ng-class="{
-          'btn-primary': tab.visible
-          }">Diff</button>
       <button type="button" class="btn btn-default" ng-click="tab.visible = false;"
-              ng-class="{
+          ng-class="{
           'btn-primary': !tab.visible
+          }">Diff</button>
+      <button type="button" class="btn btn-default" ng-click="tab.visible = true;"
+              ng-class="{
+          'btn-primary': tab.visible
           }">Compare</button>
     </div>
 
-      <div ng-show="tab.visible">
+      <div ng-show="!tab.visible">
         <img ng-src="{{analysis.imageDataUrl}}" style="max-width: 100%">
       </div>
 
-      <div ng-show="!tab.visible">
+      <div ng-show="tab.visible">
         <div id="comparison" style="background-image: url({{analysis.firstPicturePath}});background-repeat: no-repeat;">
           <img src="{{analysis.secondPicturePath}}" class="comparison-placeholder">
           <figure>
@@ -47,11 +47,5 @@
         </div>
       </div>
     </div>
-
-
-
-
-
-
   </div>
 </div>
