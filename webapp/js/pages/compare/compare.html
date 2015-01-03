@@ -20,28 +20,35 @@
     </div>
 
     <div ng-show="tab.showDetails">
-    <hr>
+      <hr>
 
-    <div class="btn-group">
-      <button type="button" class="btn btn-default" ng-click="tab.visible = false;"
-          ng-class="{
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" ng-click="tab.visible = false;"
+                ng-class="{
           'btn-primary': !tab.visible
-          }">Diff</button>
-      <button type="button" class="btn btn-default" ng-click="tab.visible = true;"
-              ng-class="{
+          }">Diff
+        </button>
+        <button type="button" class="btn btn-default" ng-click="tab.visible = true;"
+                ng-class="{
           'btn-primary': tab.visible
-          }">Compare</button>
-    </div>
+          }">Compare
+        </button>
+      </div>
 
       <div ng-show="!tab.visible">
-        <img ng-src="{{analysis.imageDataUrl}}" style="max-width: 100%">
+        <img ng-src="{{analysis.imageDataUrl}}" class="diffed-image">
       </div>
 
       <div ng-show="tab.visible">
-        <div id="comparison" style="background-image: url({{analysis.firstPicturePath}});background-repeat: no-repeat;">
-          <img src="{{analysis.secondPicturePath}}" class="comparison-placeholder">
+        <div id="comparison" ng-style="{
+            'background-image': 'url(' + analysis.firstPicturePath + ')'
+          }">
+          <img ng-src="{{analysis.secondPicturePath}}" class="comparison-placeholder">
           <figure>
-            <div id="divisor" style="width: {{slider.value}}%;background-image: url({{analysis.secondPicturePath}});background-color: #ffffff;background-size: cover;"></div>
+            <div id="divisor" ng-style="{
+              'width': slider.value + '%',
+              'background-image': 'url(' + analysis.secondPicturePath + ')'
+            }"></div>
           </figure>
           <input type="range" min="0" max="100" value="50" id="slider" ng-model="slider.value">
         </div>
