@@ -55,5 +55,18 @@
    */
 
   // Suppress warnings about == null comparisons.
-  "eqnull": true
+  "eqnull": true,
+
+  /*
+   * GLOBALS
+   * =======
+   */
+  "globals": {
+    "angular": true,
+    "describe": true,
+    "beforeEach": true,
+    "it": true,
+    "expect": true,
+    "$": true
+  }
 }
