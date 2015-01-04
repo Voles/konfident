@@ -11,8 +11,7 @@ before_script:
   - bower install --verbose
 
 script:
-  - gulp test
-  - gulp jshint
+  - gulp test && gulp jshint
 
 notifications:
   - email: false
