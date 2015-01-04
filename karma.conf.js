@@ -28,7 +28,8 @@ module.exports = function (config) {
 
     // generate js files from html templates to expose them during testing
     preprocessors: {
-      '**/*.html': 'ng-html2js'
+      '**/*.html': 'ng-html2js',
+      'webapp/js/**/*.js': 'coverage'
     },
 
     // https://github.com/karma-runner/karma-ng-html2js-preprocessor#configuration
@@ -43,6 +44,6 @@ module.exports = function (config) {
 
     port: 9876,
     browsers: ['PhantomJS'],
-    reporters: 'dots'
+    reporters: ['dots', 'coverage']
   });
 };
