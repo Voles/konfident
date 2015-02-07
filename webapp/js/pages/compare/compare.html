@@ -6,7 +6,10 @@
     <dd ng-bind="result | sum:'analysisTime'"></dd>
 
     <dt>Total difference (%)</dt>
-    <dd ng-bind="result | percentageSum:'misMatchPercentage' | number:2"></dd>
+    <dd ng-bind="result | percentageSum:'misMatchPercentage' | number:2"
+        ng-style="{
+          'color': resultToColor(result)
+        }"></dd>
   </dl>
 </div>
 

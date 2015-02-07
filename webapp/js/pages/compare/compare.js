@@ -3,7 +3,7 @@
 
   angular.module('kf')
     .controller('CompareController',
-    function ($scope, $route, $location, $q, $document, $http, CompareImages, apiPrefix) {
+    function ($scope, $route, $location, $q, $document, $http, $filter, CompareImages, apiPrefix) {
       $scope.analysis = {};
       var originPath = 'p3';
 
@@ -85,6 +85,12 @@
               $scope.result = result;
             });
         });
+
+      $scope.resultToColor = function (result) {
+        var res = $filter('percentageSum')(result, 'misMatchPercentage');
+        var hue = (1 - (res / 100)) * 120;
+        return 'hsl(' + hue + ', 100%, 50%)';
+      };
     });
 
 }());

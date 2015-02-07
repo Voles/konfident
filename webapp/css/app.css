@@ -1,3 +1,7 @@
+body {
+    overflow: scroll;
+}
+
 .diffed-image {
     max-width: 100%
 }
