@@ -14,8 +14,12 @@
   <div class="list-group-item" ng-repeat="analysis in result | orderBy:'misMatchPercentage':true">
     <span class="badge">{{analysis.misMatchPercentage | number:2}}%</span>
 
-    <div ng-click="tab.showDetails = true;">
-      <h3>{{analysis.id | filenameFromUrl}}</h3>
+    <div class="toggle" ng-init="tab = {}" ng-click="tab.showDetails = !tab.showDetails;">
+      <h4>
+        <span ng-if="!tab.showDetails" class="icon">&blacktriangleright;</span>
+        <span ng-if="tab.showDetails" class="icon">&blacktriangledown;</span>
+        {{analysis.id | filenameFromUrl}}
+      </h4>
       <em>Analysis took {{analysis.analysisTime}}ms</em>
     </div>
 
