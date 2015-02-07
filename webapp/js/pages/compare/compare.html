@@ -11,7 +11,7 @@
 </div>
 
 <div class="list-group">
-  <div class="list-group-item" ng-repeat="analysis in result">
+  <div class="list-group-item" ng-repeat="analysis in result | orderBy:'misMatchPercentage':true">
     <span class="badge">{{analysis.misMatchPercentage | number:2}}%</span>
 
     <div ng-click="tab.showDetails = true;">
