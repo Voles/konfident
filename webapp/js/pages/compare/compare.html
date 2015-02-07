@@ -3,19 +3,19 @@
   with <select ng-model="selectedDirectory" ng-options="directory.name for directory in directories"></select>
   <dl class="dl-horizontal">
     <dt>Total analysis time (ms)</dt>
-    <dd ng-bind="result | sumForObjects:'analysisTime'"></dd>
+    <dd ng-bind="result | sum:'analysisTime'"></dd>
 
     <dt>Total difference (%)</dt>
-    <dd ng-bind="result | percentageSumForObjects:'misMatchPercentage' | number:2"></dd>
+    <dd ng-bind="result | percentageSum:'misMatchPercentage' | number:2"></dd>
   </dl>
 </div>
 
 <div class="list-group">
-  <div class="list-group-item" ng-repeat="(picture, analysis) in result">
+  <div class="list-group-item" ng-repeat="analysis in result">
     <span class="badge">{{analysis.misMatchPercentage | number:2}}%</span>
 
     <div ng-click="tab.showDetails = true;">
-      <h3>{{picture}}</h3>
+      <h3>{{analysis.id | filenameFromUrl}}</h3>
       <em>Analysis took {{analysis.analysisTime}}ms</em>
     </div>
 

@@ -65,25 +65,25 @@
           });
 
           // loop over pictures
-          var result = {};
+          var analysisQueue = [];
           angular.forEach($scope.masterDirectory.pictures, function (picture) {
-            if ($scope.masterDirectory.pictures.indexOf(picture) < 0) {
-              result[picture] = {};
-              return;
-            }
-
             var firstPicturePath = apiPrefix + '/' + $scope.masterDirectory.src + '/' + picture;
             var secondPicturePath = apiPrefix + '/' + $scope.selectedDirectory.src + '/' + picture;
 
-            CompareImages.compare(firstPicturePath, secondPicturePath)
+            var compareTask = CompareImages.compare(firstPicturePath, secondPicturePath)
               .then(function (analysis) {
                 analysis.firstPicturePath = firstPicturePath;
                 analysis.secondPicturePath = secondPicturePath;
-                result[picture] = analysis;
+                return analysis;
               });
+
+            analysisQueue.push(compareTask);
           });
 
-          $scope.result = result;
+          $q.all(analysisQueue)
+            .then(function (result) {
+              $scope.result = result;
+            });
         });
     });
 
