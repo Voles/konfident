@@ -6,8 +6,7 @@ before_script:
   - npm install -g gulp bower
   - bower install
 
-script:
-  - npm test
+script: npm test
 
 notifications:
   - email: false
