@@ -34,7 +34,9 @@
     });
   });
 
-  gulp.task('build', ['jshint', 'test', 'ngAnnotate']);
+  gulp.task('build', function () {
+    return gulp.start('jshint', 'test', 'ngAnnotate');
+  });
   gulp.task('default', ['build']);
 
 }());
